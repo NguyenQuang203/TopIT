@@ -1,0 +1,109 @@
+﻿@model IEnumerable<TopIT.Models.TblVieclam>
+
+@{
+    ViewData["Title"] = "ListJob";
+}
+
+<h1>Danh sách việc làm đã lưu</h1>
+
+
+
+<div class="col-md-6">
+        <div class="navbar-serch-right-side">
+        <form class="navbar-form" asp-action="ListJob" asp-controller="JobManagement">
+                <div class="input-group add-on">
+                        <input class="form-control form-control222" placeholder="Search" name="filter" id="srch-term" type="text" style="width:500px" value="@ViewBag.filter">
+                    <div class="input-group-btn">
+                        <button class="btn btn-info" type="submit">Tìm kiếm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th style="display:none">
+                        @Html.DisplayNameFor(model => model.PkSMavieclam)
+                </th>
+            <th style="display:none">
+                        @Html.DisplayNameFor(model => model.FkSMaDn)
+                </th>
+            
+            
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Vị trí
+            </th>
+            <th>
+                Phương thức
+            </th>
+            <th>
+                Học vấn
+            </th>
+            <th>
+                Kinh nghiệm
+            </th>
+            <th>
+                Ngày đăng
+            </th>
+            <th>
+                Ngày kết thúc
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+             
+            <td style="display:none">
+                        @Html.DisplayFor(modelItem => item.PkSMavieclam)
+                </td>
+            <td style="display:none">
+                        @Html.DisplayFor(modelItem => item.FkSMaDn)
+                </td>
+            
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.SMota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SVitriviec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SPhuongthuclam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SHocvan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKinhnghiem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNgaydang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DNgayketthuc)
+            </td>
+            <td>
+                    <button class="btn btn-success">@Html.ActionLink("Chi tiết", "DetailsJob", new {  id=item.PkSMavieclam  },new { style = "color: white ;text-decoration: none;" })</button>  |
+                    <button class="btn btn-danger" style="color:wheat" onclick="confirmDelete('@item.PkSMavieclam')">Xóa</button>
+             </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<script>
+    function confirmDelete(id) {
+        if (confirm("Bạn có chắc chắn muốn xóa việc làm đã lưu?")) {
+            window.location.href = '/JobManagement/DeleteJob/' + id;
+        }
+    }
+</script>

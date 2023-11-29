@@ -1,0 +1,70 @@
+﻿@model TopIT.Models.TblUngvien
+
+@{
+    ViewData["Title"] = "DetailsCandidate";
+}
+
+<h1>Chi tiết ứng viên</h1>
+
+<div>
+  
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2" style="display:none">
+            @Html.DisplayNameFor(model => model.PkSMaUv)
+        </dt>
+        <dd class="col-sm-10" style="display:none">
+            @Html.DisplayFor(model => model.PkSMaUv)
+        </dd>
+
+        <dt class = "col-sm-2">
+            Tên ứng viên
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.STenUv)
+        </dd>
+        <dt class = "col-sm-2">
+            Giới tính
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SGioitinh)
+        </dd>
+        <dt class = "col-sm-2">
+            Ngày sinh
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DNgaysinh)
+        </dd>
+        <dt class = "col-sm-2">
+            Kinh nghiệm
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SKinhnghiem)
+        </dd>
+        <dt class = "col-sm-2">
+            Số điện thoại
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SSdt)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            Địa chỉ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SDiachi)
+        </dd>
+        <dt class="col-sm-2" style="display:none">
+            Ảnh
+        </dt>
+        <dd class="col-sm-10" style="display:none">
+            @Html.DisplayFor(model => model.SUrlCv)
+        </dd>
+    </dl>
+</div>
+

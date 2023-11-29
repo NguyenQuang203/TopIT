@@ -1,0 +1,73 @@
+﻿@model TopIT.Models.TblVieclam
+
+@{
+    ViewData["Title"] = "DetailsJob";
+}
+
+<h1>Chi tiết công việc</h1>
+
+<div>
+
+    <hr />
+    <dl class="row">
+        <div style="display:none">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PkSMavieclam)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PkSMavieclam)
+            </dd>
+
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FkSMaDn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FkSMaDn)
+            </dd>
+        </div>
+        
+        <dt class = "col-sm-2"> 
+            Mô tả
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SMota)
+        </dd>
+        <dt class = "col-sm-2">          
+            Vị trí việc làm
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SVitriviec)
+        </dd>
+        <dt class = "col-sm-2">           
+            Phương thức
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SPhuongthuclam)
+        </dd>
+        <dt class = "col-sm-2">
+           Học vấn
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SHocvan)
+        </dd>
+        <dt class = "col-sm-2">
+            Kinh nghiệm
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SKinhnghiem)
+        </dd>
+        <dt class = "col-sm-2">
+            Ngày đăng
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DNgaydang)
+        </dd>
+        <dt class = "col-sm-2">
+            Ngày kết thúc
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DNgayketthuc)
+        </dd>
+    </dl>
+</div>
+
