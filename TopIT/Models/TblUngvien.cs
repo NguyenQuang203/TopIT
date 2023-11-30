@@ -34,8 +34,13 @@ namespace TopIT.Models
         public void DelCandidate(string jobid)
         {
             TblUngvien uv = db.TblUngviens.Find(jobid);
-            db.TblUngviens.Remove(uv);
-            db.SaveChanges();
+            if(uv != null)
+            {
+                db.TblUngviens.Remove(uv);
+                db.SaveChanges();
+            }
+            return;
+            
         }
 
         public TblUngvien DetailCandidate(string jobid)

@@ -11,6 +11,7 @@ namespace TopIT.Controllers
             
             if (filter != null)
             {
+                ViewBag.Filter = filter;
                 List<TblVieclam> lsst=vl.SearchIob(filter);
                 return View(lsst);
             }
